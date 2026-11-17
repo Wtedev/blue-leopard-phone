@@ -234,10 +234,13 @@ body{
 </style>
 <link rel="stylesheet" href="./ios-liquid-glass.css">
 <style id="creative-apps-styles">
-#home{overflow-y:auto!important;overscroll-behavior:contain;scrollbar-width:none;padding-bottom:160px!important}
-#home::-webkit-scrollbar{display:none}
-#home .grid{padding-bottom:14px}
-#home .dock{position:sticky;bottom:18px;margin-top:14px;left:auto;right:auto;width:100%;z-index:10}
+/* The app grid scrolls independently; the dock stays below it, never on top of icons. */
+#home{display:flex;flex-direction:column;overflow:hidden!important;overscroll-behavior:contain;padding:82px 18px 24px!important;min-height:0}
+#home .widget{flex:0 0 auto}
+#home .grid{flex:1 1 0;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;align-content:start;grid-auto-rows:max-content;padding:8px 4px 18px}
+#home .grid::-webkit-scrollbar{display:none}
+#home .dock{position:relative;flex:0 0 auto;bottom:auto;left:auto;right:auto;width:100%;margin-top:12px;z-index:10}
+@media(max-height:750px){#home{padding-top:70px!important;padding-bottom:16px!important}#home .widget{margin-bottom:12px}#home .dock{margin-top:8px}}
 .brand-app-icon{display:grid!important;place-items:center;background:#fff!important;overflow:hidden!important}
 .brand-app-icon img{width:69%;height:69%;object-fit:contain}
 .brand-app-icon:after{display:none!important}
