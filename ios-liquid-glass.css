@@ -113,3 +113,11 @@ html,body{min-height:100%;overscroll-behavior:none}
 .app .icon:has(.ios-real-icon){overflow:visible;background:none;box-shadow:none}
 .app .icon .ios-real-icon{display:block;width:100%;height:100%;object-fit:contain;border-radius:16px;filter:drop-shadow(0 3px 5px rgba(0,0,0,.18))}
 .app .icon:has(.ios-real-icon):after{display:none}
+
+/* iMessage view: keep navigation and composer pinned within the device screen. */
+#messages{height:100%;min-height:0;max-height:100%;overflow:hidden}
+#messages .bar{flex:none;position:relative;z-index:2}
+#messages .body{flex:1 1 0;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-bottom:20px}
+#messages .chat{min-height:100%;justify-content:flex-end;padding-bottom:8px}
+#messages .replies{flex:0 0 auto;max-height:35%;overflow-y:auto;overscroll-behavior:contain;padding-bottom:32px}
+#messages .msg{overflow-wrap:anywhere}
