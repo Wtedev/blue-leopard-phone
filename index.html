@@ -607,7 +607,7 @@ const answers={
   'برجّع الجوال':'شكراً يا بطل 🙏 والأحلى لو جبت معه مشروع 😉',
 };
 let started=false;
-function bubble(t,c){const m=document.createElement('div');m.className='msg '+c;m.textContent=t;$('#chat').appendChild(m);m.scrollIntoView({behavior:'smooth'})}
+function bubble(t,c){const m=document.createElement('div');m.className='msg '+c;m.textContent=t;$('#chat').appendChild(m);const body=$('#messages .body');body.scrollTo({top:body.scrollHeight,behavior:'smooth'})}
 function typeThen(t,cb){const ty=document.createElement('div');ty.className='typing';ty.innerHTML='<i></i><i></i><i></i>';$('#chat').appendChild(ty);
   setTimeout(()=>{ty.remove();bubble(t,'in');cb&&cb()},900)}
 function startChat(){if(started)return;started=true;let i=0;(function next(){if(i<script.length)typeThen(script[i++],next);else showReplies()})()}
