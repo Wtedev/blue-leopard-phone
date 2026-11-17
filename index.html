@@ -233,6 +233,26 @@ body{
 .toast.on{opacity:1;transform:translate(-50%,0)}
 </style>
 <link rel="stylesheet" href="./ios-liquid-glass.css">
+<style id="creative-apps-styles">
+#home{overflow-y:auto!important;overscroll-behavior:contain;scrollbar-width:none;padding-bottom:160px!important}
+#home::-webkit-scrollbar{display:none}
+#home .grid{padding-bottom:14px}
+#home .dock{position:sticky;bottom:18px;margin-top:14px;left:auto;right:auto;width:100%;z-index:10}
+.brand-app-icon{display:grid!important;place-items:center;background:#fff!important;overflow:hidden!important}
+.brand-app-icon img{width:69%;height:69%;object-fit:contain}
+.brand-app-icon:after{display:none!important}
+.brand-behance{background:#1769ff!important}.brand-pinterest{background:#fff!important}.brand-instagram{background:linear-gradient(145deg,#833ab4,#fd1d1d,#fcb045)!important}.brand-canva{background:linear-gradient(135deg,#00c4cc,#7d2ae8)!important}.brand-adobe{background:#f7f7f7!important}.brand-meta{background:#fff!important}
+.brand-behance img,.brand-instagram img,.brand-canva img{background:#fff;border-radius:14px;padding:5px}
+.creative-sheet .creative-body{padding:22px 20px 90px}
+.creative-hero{padding:28px 22px;border-radius:25px;color:#111;background:#fff!important;box-shadow:0 5px 24px #0000000d;text-align:center}
+.creative-hero img{border-radius:14px;margin:0 auto 15px}
+.creative-hero h2{font-size:23px;margin-bottom:10px}
+.creative-hero p{font-size:15px;line-height:1.8;color:#555}
+.creative-tip{background:#fff;border-radius:20px;padding:18px;margin-top:16px;color:#34343b;font-size:14px;line-height:1.8}
+.creative-tip p{color:#777;margin-top:5px}
+.creative-launch{display:block;text-align:center;background:#007aff;color:#fff;text-decoration:none;border-radius:16px;padding:15px;margin-top:18px;font-weight:700}
+@media(max-height:750px){#home .grid{gap:12px 8px}}
+</style>
 </head>
 <body>
 <div class="device"><div class="screen">
@@ -279,6 +299,12 @@ body{
       <button class="app" data-toast="الكاميرا مقفلة… الفهد ما يحب يتصوّر 🐆"><div class="icon" data-ic="camera"></div><span>الكاميرا</span></button>
       <button class="app" data-toast="المكان: القصيم 📍 وأشتغل عن بُعد بعد"><div class="icon" data-ic="maps"></div><span>الخرائط</span></button>
       <button class="app" data-toast="الساعة الحين؟ وقت مشروعك الجاي ⏰"><div class="icon" data-ic="clock"></div><span>الساعة</span></button>
+      <button class="app" data-open="creative-behance"><div class="icon brand-app-icon brand-behance"><img src="https://www.google.com/s2/favicons?domain=behance.com&sz=128" alt="" loading="lazy"></div><span>بيهانس</span></button>
+      <button class="app" data-open="creative-pinterest"><div class="icon brand-app-icon brand-pinterest"><img src="https://www.google.com/s2/favicons?domain=pinterest.com&sz=128" alt="" loading="lazy"></div><span>بنترست</span></button>
+      <button class="app" data-open="creative-instagram"><div class="icon brand-app-icon brand-instagram"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=128" alt="" loading="lazy"></div><span>إنستغرام</span></button>
+      <button class="app" data-open="creative-canva"><div class="icon brand-app-icon brand-canva"><img src="https://www.google.com/s2/favicons?domain=canva.com&sz=128" alt="" loading="lazy"></div><span>كانفا</span></button>
+      <button class="app" data-open="creative-adobe"><div class="icon brand-app-icon brand-adobe"><img src="https://www.google.com/s2/favicons?domain=adobe.com&sz=128" alt="" loading="lazy"></div><span>أدوبي إكسبرس</span></button>
+      <button class="app" data-open="creative-meta"><div class="icon brand-app-icon brand-meta"><img src="https://www.google.com/s2/favicons?domain=facebook.com&sz=128" alt="" loading="lazy"></div><span>ميتا للأعمال</span></button>
       <button class="app" data-open="baloot"><div class="icon" data-ic="baloot"></div><span>بلوت</span></button>
     </div>
     <div class="dock">
@@ -289,6 +315,54 @@ body{
     </div>
   </div>
 
+  <div class="sheet creative-sheet" id="creative-behance">
+    <div class="bar"><button class="back" data-close>‹ الرئيسية</button><b>Behance</b><span></span></div>
+    <div class="body creative-body">
+      <div class="creative-hero brand-behance"><img src="https://www.google.com/s2/favicons?domain=behance.com&sz=128" alt="" width="62" height="62"><h2>معرض أعمال وإلهام بصري</h2><p>استكشفي مشاريع الهويات البصرية والتصميمات الإبداعية.</p></div>
+      <div class="creative-tip"><b>داخل جوال الفهد الأزرق</b><p>هذه واجهة تجريبية ضمن اللعبة. لفتح التطبيق الحقيقي، استخدمي الرابط التالي.</p></div>
+      <a class="creative-launch" href="https://www.behance.net/" target="_blank" rel="noopener noreferrer">فتح Behance ↗</a>
+    </div>
+  </div>
+  <div class="sheet creative-sheet" id="creative-pinterest">
+    <div class="bar"><button class="back" data-close>‹ الرئيسية</button><b>Pinterest</b><span></span></div>
+    <div class="body creative-body">
+      <div class="creative-hero brand-pinterest"><img src="https://www.google.com/s2/favicons?domain=pinterest.com&sz=128" alt="" width="62" height="62"><h2>لوحات الإلهام</h2><p>اجمعي مراجع للألوان والخطوط والتصوير والحملات.</p></div>
+      <div class="creative-tip"><b>داخل جوال الفهد الأزرق</b><p>هذه واجهة تجريبية ضمن اللعبة. لفتح التطبيق الحقيقي، استخدمي الرابط التالي.</p></div>
+      <a class="creative-launch" href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">فتح Pinterest ↗</a>
+    </div>
+  </div>
+  <div class="sheet creative-sheet" id="creative-instagram">
+    <div class="bar"><button class="back" data-close>‹ الرئيسية</button><b>Instagram</b><span></span></div>
+    <div class="body creative-body">
+      <div class="creative-hero brand-instagram"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=128" alt="" width="62" height="62"><h2>محتوى وحملات</h2><p>شاهدي المنشورات والريلز واتجاهات المحتوى.</p></div>
+      <div class="creative-tip"><b>داخل جوال الفهد الأزرق</b><p>هذه واجهة تجريبية ضمن اللعبة. لفتح التطبيق الحقيقي، استخدمي الرابط التالي.</p></div>
+      <a class="creative-launch" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">فتح Instagram ↗</a>
+    </div>
+  </div>
+  <div class="sheet creative-sheet" id="creative-canva">
+    <div class="bar"><button class="back" data-close>‹ الرئيسية</button><b>Canva</b><span></span></div>
+    <div class="body creative-body">
+      <div class="creative-hero brand-canva"><img src="https://www.google.com/s2/favicons?domain=canva.com&sz=128" alt="" width="62" height="62"><h2>تصميم المحتوى</h2><p>أنشئي تصاميم سريعة وقوالب للسوشال ميديا.</p></div>
+      <div class="creative-tip"><b>داخل جوال الفهد الأزرق</b><p>هذه واجهة تجريبية ضمن اللعبة. لفتح التطبيق الحقيقي، استخدمي الرابط التالي.</p></div>
+      <a class="creative-launch" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">فتح Canva ↗</a>
+    </div>
+  </div>
+  <div class="sheet creative-sheet" id="creative-adobe">
+    <div class="bar"><button class="back" data-close>‹ الرئيسية</button><b>Adobe Express</b><span></span></div>
+    <div class="body creative-body">
+      <div class="creative-hero brand-adobe"><img src="https://www.google.com/s2/favicons?domain=adobe.com&sz=128" alt="" width="62" height="62"><h2>محتوى إبداعي</h2><p>تصاميم وفيديوهات قصيرة وأدوات للعلامات التجارية.</p></div>
+      <div class="creative-tip"><b>داخل جوال الفهد الأزرق</b><p>هذه واجهة تجريبية ضمن اللعبة. لفتح التطبيق الحقيقي، استخدمي الرابط التالي.</p></div>
+      <a class="creative-launch" href="https://www.adobe.com/express/" target="_blank" rel="noopener noreferrer">فتح Adobe Express ↗</a>
+    </div>
+  </div>
+  <div class="sheet creative-sheet" id="creative-meta">
+    <div class="bar"><button class="back" data-close>‹ الرئيسية</button><b>Meta Business Suite</b><span></span></div>
+    <div class="body creative-body">
+      <div class="creative-hero brand-meta"><img src="https://www.google.com/s2/favicons?domain=facebook.com&sz=128" alt="" width="62" height="62"><h2>إدارة التسويق</h2><p>إدارة المحتوى والرسائل ومتابعة الأداء.</p></div>
+      <div class="creative-tip"><b>داخل جوال الفهد الأزرق</b><p>هذه واجهة تجريبية ضمن اللعبة. لفتح التطبيق الحقيقي، استخدمي الرابط التالي.</p></div>
+      <a class="creative-launch" href="https://business.facebook.com/" target="_blank" rel="noopener noreferrer">فتح Meta Business Suite ↗</a>
+    </div>
+  </div>
   <!-- PHOTOS -->
   <div class="sheet" id="photos">
     <div class="bar"><button class="back" data-close>‹ رجوع</button><span style="color:#0a84ff">تحديد</span></div>
