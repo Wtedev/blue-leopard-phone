@@ -232,6 +232,47 @@ body{
 .toast{position:absolute;top:60px;left:50%;transform:translate(-50%,-20px);background:rgba(20,20,20,.85);color:#fff;padding:10px 18px;border-radius:20px;font-size:14px;z-index:80;opacity:0;transition:.3s;pointer-events:none;white-space:nowrap}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 </style>
+<style id="whatsapp-chat-styles">
+/* Fictional interactive WhatsApp Business inbox inside the phone simulation */
+.wa-sheet{background:#f7f7f9!important;color:#16181b!important;direction:rtl}
+.wa-list-view,.wa-thread-view{height:100%;min-height:0;display:flex;flex-direction:column}
+.wa-thread-view[hidden],.wa-list-view[hidden]{display:none!important}
+.wa-top{display:flex;justify-content:space-between;align-items:center;padding:57px 20px 0;min-height:96px;color:#007aff}
+.wa-top .back{font-size:15px}
+.wa-top span{font-size:26px}
+.wa-list-view h1{font-size:33px;padding:4px 20px 12px}
+.wa-search{background:#e8e8ed;border-radius:12px;margin:0 18px 12px;padding:10px 14px;color:#85858b;font-size:14px}
+.wa-filter{display:flex;gap:7px;padding:0 18px 12px;border-bottom:1px solid #dddde1}
+.wa-filter span{background:#e9e9ef;border-radius:18px;padding:5px 11px;font-size:12px;color:#666}
+.wa-filter .active{background:#d9eee0;color:#14843a}
+.wa-chats{overflow-y:auto;min-height:0;flex:1;overscroll-behavior:contain}
+.wa-chat{width:100%;background:none;border:0;display:flex;align-items:center;gap:11px;padding:12px 17px;text-align:right;color:inherit;cursor:pointer}
+.wa-chat+.wa-chat{border-top:1px solid #e7e7eb}
+.wa-avatar{width:50px;height:50px;flex:0 0 50px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:19px;background:#7c8aa5}
+.wa-chat-info{flex:1;min-width:0}
+.wa-chat-line{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.wa-chat-line b{font-size:15px}
+.wa-chat-line time{font-size:11px;color:#8a8b92}
+.wa-chat-info p{font-size:12px;color:#747781;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:5px}
+.wa-unread{background:#24c261;color:#fff;border-radius:50%;font-size:11px;min-width:20px;height:20px;display:grid;place-items:center}
+.wa-tabs{flex:none;display:flex;justify-content:space-around;padding:11px 5px 25px;background:#f4f4f7;border-top:1px solid #ddd;font-size:11px;color:#8c8c96}
+.wa-tabs b{color:#198e4b}
+.wa-thread-top{padding:54px 13px 10px;display:flex;gap:10px;align-items:center;min-height:112px;background:#f7f7f9;border-bottom:1px solid #dedee2}
+.wa-thread-top button{border:0;background:none;color:#007aff;font-size:30px;cursor:pointer}
+.wa-thread-top .wa-avatar{width:39px;height:39px;flex-basis:39px;font-size:15px}
+.wa-thread-title{flex:1;display:flex;flex-direction:column;gap:3px}
+.wa-thread-title b{font-size:15px}
+.wa-thread-title small{font-size:11px;color:#8c8c92}
+.wa-thread-top>span{color:#007aff;font-size:23px}
+.wa-thread-messages{flex:1;min-height:0;overflow-y:auto;padding:18px 12px 24px;display:flex;flex-direction:column;gap:10px;background-color:#e8e5dd;background-image:radial-gradient(#ffffff55 1px,transparent 1px);background-size:24px 24px;overscroll-behavior:contain}
+.wa-bubble{max-width:84%;padding:9px 12px 6px;border-radius:15px;box-shadow:0 1px 1px #00000014;align-self:flex-start;background:#fff;line-height:1.65;font-size:13px;overflow-wrap:anywhere}
+.wa-bubble.mine{background:#d9fdd3;align-self:flex-end}
+.wa-bubble time{display:block;text-align:left;font-size:10px;color:#84908b;margin-top:3px}
+.wa-compose{flex:none;display:flex;align-items:center;gap:9px;padding:10px 12px 25px;background:#f5f5f8}
+.wa-compose span{font-size:25px;color:#007aff}
+.wa-compose input{flex:1;min-width:0;border:1px solid #ddd;border-radius:23px;padding:10px 13px;font:inherit;font-size:14px;background:#fff;outline:none}
+.wa-compose button{border:0;background:#20b85a;color:#fff;border-radius:50%;width:35px;height:35px;font-size:22px;cursor:pointer}
+</style>
 <link rel="stylesheet" href="./ios-liquid-glass.css">
 <style id="creative-apps-styles">
 /* The app grid scrolls independently; the dock stays below it, never on top of icons. */
@@ -318,13 +359,21 @@ body{
     </div>
   </div>
 
-  <div class="sheet creative-sheet" id="creative-whatsapp">
-    <div class="bar"><button class="back" data-close>‹ الرئيسية</button><b>WhatsApp Business</b><span></span></div>
-    <div class="body creative-body">
-      <div class="creative-hero brand-whatsapp"><img src="https://www.google.com/s2/favicons?domain=whatsapp.com&sz=128" alt="" width="62" height="62"><h2>تواصل العملاء</h2><p>متابعة استفسارات العملاء والرد على الرسائل وإدارة المحادثات من الجوال.</p></div>
-      <div class="creative-tip"><b>داخل جوال الفهد الأزرق</b><p>هذه واجهة تجريبية ضمن اللعبة. لفتح الخدمة الحقيقية، استخدمي الرابط التالي.</p></div>
-      <a class="creative-launch" href="https://www.whatsapp.com/business/" target="_blank" rel="noopener noreferrer">فتح WhatsApp Business ↗</a>
+  <div class="sheet wa-sheet" id="creative-whatsapp">
+    <div class="wa-list-view" id="waListView">
+      <div class="wa-top"><button class="back" data-close>‹ الرئيسية</button><span>⋯</span></div>
+      <h1>واتساب</h1>
+      <div class="wa-search">⌕ بحث في المحادثات</div>
+      <div class="wa-filter"><span class="active">الكل</span><span>غير المقروءة</span><span>المجموعات</span></div>
+      <div class="wa-chats" id="waChats"></div>
+      <div class="wa-tabs"><span>التحديثات</span><b>الدردشات</b><span>المكالمات</span><span>الإعدادات</span></div>
     </div>
+    <div class="wa-thread-view" id="waThreadView" hidden>
+      <div class="wa-thread-top"><button type="button" id="waThreadBack">‹</button><div class="wa-avatar" id="waThreadAvatar"></div><div class="wa-thread-title"><b id="waThreadName"></b><small>آخر ظهور مؤخرًا</small></div><span>☎</span></div>
+      <div class="wa-thread-messages" id="waThreadMessages"></div>
+      <form class="wa-compose" id="waCompose"><span>＋</span><input id="waInput" placeholder="رسالة" autocomplete="off" maxlength="300"><button type="submit" aria-label="إرسال">↑</button></form>
+    </div>
+  </div>
   </div>
   </div>
   <div class="sheet creative-sheet" id="creative-pinterest">
@@ -693,6 +742,53 @@ function typeThen(t,cb){const ty=document.createElement('div');ty.className='typ
 function startChat(){if(started)return;started=true;let i=0;(function next(){if(i<script.length)typeThen(script[i++],next);else showReplies()})()}
 function showReplies(){const r=$('#replies');r.innerHTML='';Object.keys(answers).forEach(q=>{const b=document.createElement('button');b.textContent=q;
   b.onclick=()=>{bubble(q,'out');r.innerHTML='';typeThen(answers[q],showReplies)};r.appendChild(b)})}
+
+/* All conversations are fictional and exist only in this demo. */
+const waData=[
+ {name:'أ. نورة | براند جديد',avatar:'ن',color:'#b677ad',time:'الآن',unread:2,messages:[['in','السلام عليكم، عندنا مشروع جديد ونحتاج هوية بصرية متكاملة.'],['in','ممكن ترسلين لنا نماذج من أعمالكم؟'],['out','وعليكم السلام، يا هلا! أكيد، أرسل لكم الأعمال ونحدد موعد نفهم فيه تفاصيل المشروع.'],['in','ممتاز، يناسبك بكرة الساعة ١١؟']]},
+ {name:'فريق الكرييتف 🎨',avatar:'🎨',color:'#405d96',time:'١:٢٤ م',unread:5,messages:[['in','صباح الإبداع يا فريق!'],['in','خلصنا خيارات الشعار الثلاثة؟'],['out','إيه، جاهزة للمراجعة. باقي نعتمد الاتجاه النهائي.'],['in','تمام، نرسل العرض اليوم قبل نهاية الدوام 🙌']]},
+ {name:'محمد | حملة إعلانية',avatar:'م',color:'#368d83',time:'أمس',unread:1,messages:[['in','كيف نتائج الحملة بعد أول يوم؟'],['out','بداية جيدة، نحتاج نجمع بيانات أكثر قبل الحكم على الأداء.'],['in','تمام، خلينا نراجع تكلفة النتائج ونسبة النقر بكرة.']]},
+ {name:'استوديو التصوير 📸',avatar:'📸',color:'#bf8653',time:'أمس',unread:0,messages:[['in','تم تأكيد جلسة تصوير المنتجات يوم الخميس.'],['out','ممتاز، نحتاج إضاءة ناعمة وخلفية محايدة.'],['in','وصل، بنجهز المعدات والديكور.']]},
+ {name:'سارة | محتوى السوشال',avatar:'س',color:'#8c78c8',time:'الأحد',unread:0,messages:[['in','أرسلت لك تقويم المحتوى للشهر الجاي.'],['out','وصلني، بخلي المنشورات أكثر تنوعًا بين تثقيفي وتفاعلي.'],['in','حلو! ننتظر ملاحظاتك على الكابشنات.']]},
+ {name:'عميل القهوة ☕',avatar:'☕',color:'#846c56',time:'السبت',unread:0,messages:[['in','نبغى التغليف يكون بسيط وفخم، بس فيه لمسة مختلفة.'],['out','عندي تصور مبدئي للبوكس والأكياس، بعرضه عليكم قريب.'],['in','متحمسين نشوفه!']]}
+];
+let waActive=-1;
+const waEl=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el};
+function waRenderList(){
+ const root=document.getElementById('waChats');root.replaceChildren();
+ waData.forEach((c,i)=>{
+  const btn=waEl('button','wa-chat');btn.type='button';
+  const av=waEl('div','wa-avatar',c.avatar);av.style.background=c.color;
+  const info=waEl('div','wa-chat-info'),line=waEl('div','wa-chat-line');
+  line.append(waEl('b','',c.name),waEl('time','',c.time));
+  const summary=waEl('div','wa-chat-line');summary.append(waEl('p','',c.messages[c.messages.length-1][1]));
+  if(c.unread)summary.append(waEl('span','wa-unread',String(c.unread)));
+  info.append(line,summary);btn.append(av,info);btn.onclick=()=>waOpen(i);root.append(btn);
+ });
+}
+function waOpen(i){
+ waActive=i;const c=waData[i];c.unread=0;
+ document.getElementById('waListView').hidden=true;document.getElementById('waThreadView').hidden=false;
+ document.getElementById('waThreadName').textContent=c.name;
+ const av=document.getElementById('waThreadAvatar');av.textContent=c.avatar;av.style.background=c.color;
+ waRenderThread();
+}
+function waRenderThread(){
+ const root=document.getElementById('waThreadMessages');root.replaceChildren();
+ waData[waActive].messages.forEach(([side,body])=>{
+  const b=waEl('div','wa-bubble'+(side==='out'?' mine':''),body);
+  b.append(waEl('time','','✓✓'));root.append(b);
+ });root.scrollTop=root.scrollHeight;
+}
+document.getElementById('waThreadBack').onclick=()=>{
+ document.getElementById('waThreadView').hidden=true;document.getElementById('waListView').hidden=false;waActive=-1;waRenderList();
+};
+document.getElementById('waCompose').onsubmit=e=>{
+ e.preventDefault();const input=document.getElementById('waInput'),v=input.value.trim();
+ if(!v||waActive<0)return;
+ waData[waActive].messages.push(['out',v]);input.value='';waRenderThread();
+};
+waRenderList();
 </script>
 </body>
 </html>
